@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>9월 14일 실습: 최창영</title>
+  </head>
+  <body>
+    <h1>함수 선언식과 표현식</h1>
+
+    <!--함수 호출-->
+    <button onclick="fnSayHello()">눌러주세요</button>
+    <button onclick="alert(fnMinusNumbers(2, 3))">2 - 3 = ?</button>
+
+    <script>
+      const log = console.log;
+
+      //함수 선언식
+      function fnSayHello() {
+        alert("안녕하세요.");
+      }
+
+      //함수 표현식
+      const fnMinusNumbers = function (num1, num2) {
+        return num1 - num2;
+      };
+
+      fnSayHello1(); //함수 호출
+      // 자바 스크립트 호이스팅 예
+      // 함수 선언식
+      function fnSayHello1() {
+        //함수 선언
+        log("안녕하세요1");
+      }
+
+      //함수 표현식
+      //fnSayHello2(); //함수 초기화 하지않아 오류 발생
+      const fnSayHello2 = () => {
+        //함수 선언
+        log("안녕하세요2");
+      };
+      fnSayHello2(); //함수 선언 후 호출. 순서 매우 중요
+    </script>
+  </body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>9월 14일 실습 예제: 최창영</title>
+  </head>
+  <body>
+    <h1>변수 선언</h1>
+
+    <script>
+      const log = console.log;
+      // var 함수 스코프 예
+      fnMyFunction();
+      function fnMyFunction() {
+        var num1 = 5;
+        console.log(num1);
+      }
+      //console.log(num1); //함수 밖에서 사용 불가능
+
+      // var 블록 스코프 예
+      var num2 = 30;
+      {
+        var num2 = 50; // 같은 이름으로 중복 선언 가능.
+        console.log(num2);
+        //괄호는 의미가 없음. (무시)
+      }
+      console.log(num2);
+
+      //let 사용 - 블록 스코프 기반
+      if (true) {
+        let num3 = 3;
+        num3 = num3 + 5; //let으로 선언되었기에 값 변경 가능
+        console.log(num3); //8
+      }
+      //console.log(num3); // 블록 외부에서는 사용 못함.
+
+      let num4 = 10;
+      if (true) {
+        let num4 = 20;
+        console.log(num4); // 20
+      }
+      console.log(num4); // 10
+
+      //블록 스코프 예시
+      {
+        let apple = 3;
+        log(apple); // 3
+        apple = 5; // 재할당 가능
+        log(apple); // 5
+        //let apple = 7;  // (오류발생) 같은 이름으로 중복 선언 허용하지 않음
+
+        //const car;  // 선언과 동시에 값 할당하지 않아 오류
+        const carname = "하이브리드카";
+        log(carname); // '하이브리드카' 출력
+        //carname = "디젤카"; // const는 상수기 때문에 재할당 불가능
+      }
+
+      // 블록 밖이기때문에 둘다 오류 발생
+      //log(apple);
+      //log(carname);
+    </script>
+  </body>
+</html>
