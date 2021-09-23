@@ -1,0 +1,18 @@
+{
+  "name": "안녕하세요 PWA by YOUNG",
+  "short_name": "PWA by YOUNG",
+  "description": "PWA 처음 만드는 프로그램입니다.",
+  "scope": ".",
+  "start_url": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "theme_color": "#ffffff",
+  "background_color": "#ffffff",
+  "icons": [
+    {
+      "src": "images/icons/android-chrome-512x512.png",
+      "sizes": "512x512",
+      "type": "png"
+    }
+  ]
+}
